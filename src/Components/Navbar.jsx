@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { use } from 'react';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const Navbar = () => {
+    const data = use(AuthContext);
+    console.log(data)
 
     const links = <>
         <li><a>Item 1</a></li>
