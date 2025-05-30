@@ -7,7 +7,7 @@ const auth = getAuth(app);
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-
+const provider = new GoogleAuthProvider();
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -24,8 +24,9 @@ const AuthProvider = ({ children }) => {
     }
 
     // signIn with google
+    
     const signInWithGoogle = () => {
-        const provider = new GoogleAuthProvider();
+        
         setLoading(true);
         return signInWithPopup(auth, provider)
     }
